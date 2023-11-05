@@ -5,7 +5,7 @@ import "fmt"
 type person struct {
 	firstName string 
 	lastName string
-	contact contactInfo
+	contactInfo
 }
 
 type contactInfo struct {
@@ -15,10 +15,22 @@ type contactInfo struct {
 
 func main() {
 	var p1 person
-	p1.contact = contactInfo{
+	p1.contactInfo = contactInfo{
 		email: "test@gmail.com",
 		zipCode: 2332222,
 	}
 
-	fmt.Printf("%+v", p1)
+	// &variable gives the memory address of the value the variable is pointing at(not the actual value at this moment)
+	// personPointer := &p1
+	p1.updateName("Ashley")
+	p1.print()
+}
+
+// only a pointer to a person type can call the function
+func (p *person) updateName(newFirstName string) {
+	(*p).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
