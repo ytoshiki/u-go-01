@@ -1,4 +1,4 @@
-# u-go-01
+# Golang memo
 
 ## Map vs Struct
 
