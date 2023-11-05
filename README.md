@@ -3,7 +3,7 @@
 ## Map vs Struct
 
 ### Map 
-- All keys me the same type
+- All keys must the same type
 - All values must be the same type
 - Keys are iondexed - can iterate over them
 - Use to represent a collection of related properties
